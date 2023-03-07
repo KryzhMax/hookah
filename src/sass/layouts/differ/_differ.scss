@@ -1,0 +1,27 @@
+.differences {
+  color: var(--title-main);
+  padding: 14px 27px;
+}
+
+.article {
+  max-height: 80vh;
+  overflow-y: scroll;
+  margin: 50px auto 0;
+}
+
+.background__differ {
+  background-image: var(--gradient), url("../images/hookah/background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.splitter {
+  margin-top: 10px;
+  text-align: center;
+}
+
+span.pre-title {
+  font-size: 20px;
+}

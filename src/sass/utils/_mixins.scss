@@ -1,0 +1,56 @@
+@mixin mq($val) {
+  $mobile: 320px;
+  $fablet: 478px;
+  $tablet: 768px;
+  $desktop: 1280px;
+  $noDesk: 1440px;
+  @if $val==mob {
+    @media (min-width: $mobile) {
+      @content;
+    }
+  } @else if $val==mob-only {
+    @media (max-width:#{$tablet - 0.02}) {
+      @content;
+    }
+  } @else if $val==fab {
+    @media (min-width: $fablet) {
+      @content;
+    }
+  } @else if $val==fab-only {
+    @media (min-width:$tablet) and (max-width:#{$fablet - 0.02}) {
+      @content;
+    }
+  } @else if $val==tab {
+    @media (min-width: $tablet) {
+      @content;
+    }
+  } @else if $val==tab-only {
+    @media (min-width:$tablet) and (max-width:#{$desktop - 0.02}) {
+      @content;
+    }
+  } @else if $val==desk {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  } @else if $val==noDesk {
+    @media (min-width: $noDesk) {
+      @content;
+    }
+  } @else if $val==retina {
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (-moz-min-device-pixel-ratio: 2),
+      screen and (-o-min-device-pixel-ratio: 2/1),
+      screen and (-webkit-min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      @content;
+    }
+  }
+}
+
+@mixin fonts($fs: 12px, $fw: 500, $lh: 1.5, $ls: 0.03em) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh;
+  letter-spacing: $ls;
+}

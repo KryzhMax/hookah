@@ -1,0 +1,74 @@
+// @import '~node_modules/modern-normalize/modern-normalize.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ukr-text);
+  color: var(--white-text);
+  background-color: #fff;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.pre-title {
+  @include fonts(18px, 400, 1.16, null);
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #00000042;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--title-secondary);
+  margin: 16px 0;
+  transform: translate3d(0, calc(var(--scrollTop) / -30), 0);
+  will-change: transform;
+
+  @include mq(tab) {
+    @include fonts(26px, 400, 1.15, null);
+  }
+  @include mq(desk) {
+    @include fonts(30px, 400, 1.1333, 0.04em);
+  }
+}
+
+.title {
+  @include fonts(34px, 700, 1.147, 0.04em);
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--title-main);
+  text-shadow: 0 0 15px #000;
+  margin: 32px 0;
+
+  transform: translate3d(0, calc(var(--scrollTop) / -30), 0);
+  will-change: transform;
+
+  @include mq(tab) {
+    @include fonts(48px, null, 1.145, 0.04em);
+    margin: 40px 0;
+  }
+  @include mq(desk) {
+    @include fonts(58px, null, 1.138, 0.06em);
+    margin: 60px 0;
+  }
+}

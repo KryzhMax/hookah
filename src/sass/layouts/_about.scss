@@ -1,0 +1,134 @@
+.about {
+  @include mq(mob) {
+    background-image: var(--gradient), url(../images/hookah/tobacco-bowl.png);
+    // background-image: var(--gradient), url(../images/hookah/bowl.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    // background-image: url(../images/about/mob-milk-left.png),
+    // url(../images/about/mob-milk-right.png);
+    // background-size: 88px;
+    // background-position: left 0 bottom 73px, right 0 bottom 200px;
+    // bottom: 175px;
+    // @include mq(retina) {
+    //   background-image: url(../images/about/mob-milk-left@2x.png),
+    //     url(../images/about/mob-milk-right@2x.png);
+    //   background-size: 88px;
+    // }
+  }
+  // @include mq(desk) {
+  //   background-image: url(../images/about/desk-milk-left.png),
+  //     url(../images/about/desk-milk-right.png);
+  //   background-repeat: no-repeat;
+  //   background-position: left 0 top 80px, right 0 top 200px;
+  //   background-size: 250px;
+  //   @include mq(retina) {
+  //     background-image: url(../images/about/desk-milk-left@2x.png),
+  //       url(../images/about/desk-milk-right@2x.png);
+  //     background-repeat: no-repeat;
+  //     background-position: left 0 top 236px, right 50 top 236px;
+  //     background-size: 250px;
+  //   }
+  // }
+}
+
+.about.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+  @include mq(tab) {
+    padding: 0 33px;
+  }
+  @include mq(desk) {
+    padding: 0 16px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  @include fonts(14px, 400, 1.62, null);
+
+  @include mq(tab) {
+    @include fonts(16px, null, 1.94, 0.04em);
+    margin-left: auto;
+  }
+  @include mq(desk) {
+    line-height: 1.94;
+  }
+  @include mq(noDesk) {
+    font-size: 20px;
+  }
+}
+
+.about__wrapper {
+  @include mq(tab) {
+    display: flex;
+  }
+  @include mq(desk) {
+    align-items: center;
+  }
+}
+
+.content__button {
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: var(--background-secondary);
+  padding: 0;
+
+  font-family: inherit;
+  text-align: center;
+
+  color: var(--title-main);
+  border: none;
+  cursor: pointer;
+
+  min-width: 176px;
+  height: 44px;
+
+  border-radius: 22px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28;
+  transition: color var(--transition), background-color var(--transition);
+
+  @include mq(tab) {
+    display: block;
+  }
+
+  @include mq(desk) {
+    min-width: 176px;
+  }
+  &:hover,
+  &:focus {
+    background-color: #ecebeb;
+  }
+}
+
+.content__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  margin-left: auto;
+  margin-bottom: 20px;
+  text-align: center;
+
+  max-width: 250px;
+  border-radius: 10px;
+
+  background-color: var(--transparency);
+
+  @include mq(fab) {
+    max-width: 335px;
+    margin-bottom: 40px;
+  }
+  @include mq(tab) {
+    max-width: 478px;
+  }
+  @include mq(desk) {
+    max-width: 768px;
+  }
+}

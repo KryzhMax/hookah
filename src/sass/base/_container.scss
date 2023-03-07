@@ -1,0 +1,20 @@
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  @include mq(mob) {
+    width: 320px;
+  }
+  @include mq(fab) {
+    width: 478px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  @include mq(tab) {
+    width: 768px;
+  }
+  @include mq(desk) {
+    width: 1200px;
+  }
+}
