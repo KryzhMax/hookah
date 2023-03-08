@@ -3,18 +3,57 @@ const path = require("path");
 const FileManagerPlugin = require("filemanager-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 // const HtmlWebpackIncludeAssetsPlugin = require("html-webpack-include-assets-plugin");
 
 module.exports = {
   entry: {
-    index: path.join(__dirname, "src", "index.js"),
-    // differ: path.join(__dirname, "src", "differ.js"),
+    index: {
+      import: path.join(__dirname, "src", "index.js"),
+    },
     style: path.join(__dirname, "src", "sass", "style.scss"),
   },
   output: {
     path: path.join(__dirname, "dist"),
     filename: "[name].[contenthash:8].js",
     assetModuleFilename: path.join("images", "[name].[contenthash][ext]"),
+  },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            plugins: [
+              ["gifsicle", { interlaced: true }],
+              ["jpegtran", { progressive: true }],
+              ["optipng", { optimizationLevel: 5 }],
+              ["svgo", { name: "preset-default" }],
+            ],
+          },
+        },
+      }),
+      new CssMinimizerPlugin(),
+      new TerserPlugin({
+        parallel: true,
+        terserOptions: {
+          compress: {
+            drop_console: true,
+          },
+        },
+      }),
+    ],
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all",
+        },
+      },
+    },
   },
   module: {
     rules: [
@@ -79,11 +118,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "differ.html"),
       filename: "differ.html",
-      // chunks: ["differ", "style"],
-      // inject: (entryPointName) =>
-      //   entryPointName === "differ" || entryPointName === "style"
-      //     ? "head"
-      //     : "body",
       chunks: ["style"],
       inject: (entryPointName) =>
         entryPointName === "style" ? "head" : "body",
@@ -128,22 +162,5 @@ module.exports = {
   devServer: {
     watchFiles: path.join(__dirname, "src"),
     port: 8080,
-  },
-  optimization: {
-    minimizer: [
-      new ImageMinimizerPlugin({
-        minimizer: {
-          implementation: ImageMinimizerPlugin.imageminMinify,
-          options: {
-            plugins: [
-              ["gifsicle", { interlaced: true }],
-              ["jpegtran", { progressive: true }],
-              ["optipng", { optimizationLevel: 5 }],
-              ["svgo", { name: "preset-default" }],
-            ],
-          },
-        },
-      }),
-    ],
   },
 };
