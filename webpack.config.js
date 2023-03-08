@@ -12,7 +12,7 @@ module.exports = {
     index: {
       import: path.join(__dirname, "src", "index.js"),
     },
-    style: path.join(__dirname, "src", "sass", "style.scss"),
+    style: path.join(__dirname, "src", "style.scss"),
   },
   output: {
     path: path.join(__dirname, "dist"),

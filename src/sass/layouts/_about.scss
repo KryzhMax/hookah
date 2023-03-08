@@ -1,6 +1,6 @@
 .about {
   @include mq(mob) {
-    background-image: var(--gradient), url(../images/hookah/tobacco-bowl.webp);
+    background-image: var(--gradient), url(./images/hookah/tobacco-bowl.webp);
     background-size: cover;
     background-repeat: no-repeat;
   }

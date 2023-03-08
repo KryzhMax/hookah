@@ -1,0 +1,20 @@
+@import "./sass/utils/mixins";
+@import "./sass/utils/mixins";
+@import "./sass/utils/reset";
+@import "./sass/utils/variables";
+
+// @import "./base/card-set";
+@import "./sass/base/checkbox";
+@import "./sass/base/common";
+@import "./sass/base/container";
+@import "./sass/base/section";
+
+@import "./sass/layouts/header";
+@import "./sass/layouts/hero";
+@import "./sass/layouts/cards";
+@import "./sass/layouts/about";
+@import "./sass/layouts/slider";
+@import "./sass/layouts/contacts";
+
+@import "./sass/layouts/differ/differ";
+@import "./sass/layouts/home-order/home_order";

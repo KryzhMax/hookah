@@ -299,12 +299,12 @@
 }
 
 .layers__base {
-  background-image: var(--gradient), url(../images/hookah/bg.webp);
+  background-image: var(--gradient), url(./images/hookah/bg.webp);
   transform: translate3d(0, calc(var(--scrollTop) / 9), 0);
 }
 
 .layers__front {
-  background-image: var(--gradient), url(../images/hookah/fg.webp);
+  background-image: var(--gradient), url(./images/hookah/fg.webp);
   transform: translate3d(0, calc(var(--scrollTop) / 7), 0);
 }
 

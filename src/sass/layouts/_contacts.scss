@@ -4,7 +4,7 @@
   // position: relative;
   background-image: var(--gradient-reverse),
     // url("../images/hookah/background.png");
-    url("../images/hookah/circle.jpg");
+    url("./images/hookah/circle.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -80,10 +80,11 @@
 .schedule-list {
   padding-bottom: 24px;
   border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 24px;
+  margin-bottom: 24px !important;
+
   @include mq(tab) {
-    margin-bottom: 32px;
-    padding-bottom: 32px;
+    margin-bottom: 32px !important;
+    padding-bottom: 32px !important;
   }
 }
 
