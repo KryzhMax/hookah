@@ -18,6 +18,7 @@ module.exports = {
     path: path.join(__dirname, "dist"),
     filename: "[name].[contenthash:8].js",
     assetModuleFilename: path.join("images", "[name].[contenthash][ext]"),
+    style: "style[contenthash].css",
   },
   optimization: {
     minimize: true,
