@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-// const HtmlWebpackIncludeAssetsPlugin = require("html-webpack-include-assets-plugin");
 
 module.exports = {
   entry: {
@@ -17,7 +16,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, "dist"),
     filename: "[name].[contenthash:8].js",
-    assetModuleFilename: path.join("[name].[contenthash:8][ext]"),
+    assetModuleFilename: path.join("images", "[name].[contenthash][ext]"),
     clean: true,
   },
   optimization: {
@@ -110,12 +109,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
       filename: "index.html",
-      chunks: ["style", "index"],
+      chunks: ["index", "style"],
       inject: (entryPointName) =>
-        entryPointName === "index" || entryPointName === "style"
-          ? "head"
-          : "body",
-      scriptLoading: "async",
+        entryPointName === "style" ? "head" : "body",
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "differ.html"),
@@ -138,10 +134,6 @@ module.exports = {
       inject: (entryPointName) =>
         entryPointName === "style" ? "head" : "body",
     }),
-    // new HtmlWebpackIncludeAssetsPlugin({
-    //   assets: ["path/to/chunked/html/file.html"],
-    //   append: false,
-    // }),
     new FileManagerPlugin({
       events: {
         onStart: {
