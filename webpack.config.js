@@ -8,7 +8,6 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 // const HtmlWebpackIncludeAssetsPlugin = require("html-webpack-include-assets-plugin");
 
 module.exports = {
-  // entry: "./src/index.js",
   entry: {
     index: {
       import: path.join(__dirname, "src", "index.js"),
@@ -156,7 +155,7 @@ module.exports = {
       },
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].css",
+      filename: "[name].[contenthash:8].css",
     }),
   ],
   devServer: {
