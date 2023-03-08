@@ -55,6 +55,7 @@
                     class="mobile-nav__btn"
                     aria-expanded="false"
                     data-menu-button
+                    aria-label="Відкрити мобільне меню"
                   >
                     <svg
                       class="mobile-nav__icon"
@@ -73,7 +74,11 @@
                     </svg>
                   </button>
 
-                  <button class="header__btn" data-franchise-open>
+                  <button
+                    class="header__btn"
+                    data-franchise-open
+                    aria-label="Замовити"
+                  >
                     Замовити!
                     <svg class="btn-icon" width="6" height="10">
                       <use href="./images/sprite.svg#icon-further"></use>
@@ -86,6 +91,7 @@
                     class="header__btn--mobile"
                     type="button"
                     data-franchise-open
+                    aria-label="Замовити"
                   >
                     Замовити!
                     <svg class="btn-icon" width="6" height="10">
@@ -161,11 +167,17 @@
                     <a
                       class="link hero__button_products hero__button-more"
                       data-products
+                      aria-label="Послуги"
                       >Послуги</a
                     >
                   </li>
                   <li class="hero__item_button">
-                    <a class="link hero__button_made" data-works>Наші роботи</a>
+                    <a
+                      class="link hero__button_made"
+                      data-works
+                      aria-label="Наші роботи"
+                      >Наші роботи</a
+                    >
                   </li>
                 </ul>
               </div>
@@ -271,7 +283,11 @@
               </h4> -->
                       <!-- <p class="mb-4">per person</p>
               <p class="mb-4">Drina, Serbia</p> -->
-                      <button type="button" class="hero__button_products">
+                      <button
+                        type="button"
+                        class="hero__button_products"
+                        aria-label="замовлення додому"
+                      >
                         <a href="home-order.html" class="link hero__button-more"
                           >Повна інформація</a
                         >
@@ -306,16 +322,17 @@
                         від 4000<sup>грн</sup> / 4-5<sup>год</sup>
                       </h4>
 
-                      <button type="button" class="hero__button_products">
+                      <button
+                        type="button"
+                        class="hero__button_products"
+                        aria-label="Кейтерінг"
+                      >
                         <a href="catering.html" class="link hero__button-more">
                           Повна інформація
                         </a>
                       </button>
                       <div class="img-wrap img-2">
-                        <img
-                          src="https://assets.codepen.io/1462889/grass.png"
-                          alt=""
-                        />
+                        <img src="./images/hookah/grass.webp" alt="трава" />
                       </div>
                       <div class="img-wrap img-4">
                         <img
@@ -327,14 +344,14 @@
                       </div>
                       <div class="img-wrap img-5">
                         <img
-                          src="https://assets.codepen.io/1462889/Ivy.png"
+                          src="./images/hookah/Ivy.webp"
                           alt="камінь"
                           loading="lazy"
                         />
                       </div>
                       <div class="img-wrap img-6">
                         <img
-                          src="https://assets.codepen.io/1462889/IvyRock.png"
+                          src="./images/hookah/IvyRock.webp"
                           alt="камінь"
                           loading="lazy"
                         />
@@ -368,7 +385,11 @@
                     Сходу у всій красі.
                   </p>
                 </div>
-                <button class="content__button" type="button">
+                <button
+                  class="content__button"
+                  type="button"
+                  aria-label="Чим ми відрізняємось"
+                >
                   <a class="link differences" href="differ.html">
                     Дізнатись більше</a
                   >
@@ -385,6 +406,7 @@
                 <div class="slide-image slider-link prev">
                   <img
                     src="https://goranvrban.com/codepen/img2.jpg"
+                    alt="our photo 1"
                     loading="lazy"
                   />
                   <div class="overlay overlay-blue"></div>
@@ -408,6 +430,7 @@
                   <img
                     src="https://goranvrban.com/codepen/img3.jpg"
                     loading="lazy"
+                    alt="our photo 2"
                   />
                   <div class="overlay overlay-blue"></div>
                 </div>
@@ -430,6 +453,7 @@
                   <img
                     src="https://goranvrban.com/codepen/img5.jpg"
                     loading="lazy"
+                    alt="our photo 3"
                   />
                   <div class="overlay overlay-blue"></div>
                 </div>
@@ -452,6 +476,7 @@
                   <img
                     src="https://goranvrban.com/codepen/img6.jpg"
                     loading="lazy"
+                    alt="our photo 4"
                   />
                   <div class="overlay overlay-blue"></div>
                 </div>
@@ -540,6 +565,7 @@
         type="button"
         data-aos="fade-up"
         data-aos-anchor-placement="center-center"
+        aria-label="Повернутися наверх"
       >
         <svg class="scroll-up__icon" width="50" height="50">
           <use href="./images/sprite.svg#icon-arrow-up2"></use>
@@ -620,11 +646,20 @@
           </div>
           <!-- Modal checkbox  -->
           <!-- Submit button -->
-          <button class="button-franchise connect__button" type="submit">
+          <button
+            class="button-franchise connect__button"
+            type="submit"
+            aria-label="Надіслати запит"
+          >
             Надіслати
           </button>
         </form>
-        <button class="button__close" type="button" data-franchise-close="">
+        <button
+          class="button__close"
+          type="button"
+          data-franchise-close
+          aria-label="Закрити вікно"
+        >
           <svg class="button__icon" width="24" height="24">
             <use href="./images/sprite.svg#icon-menu-close"></use>
           </svg>

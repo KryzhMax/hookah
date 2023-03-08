@@ -113,6 +113,7 @@ module.exports = {
       chunks: ["index", "style"],
       inject: (entryPointName) =>
         entryPointName === "style" ? "head" : "body",
+      scriptLoading: "async",
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "differ.html"),
@@ -120,6 +121,7 @@ module.exports = {
       chunks: ["style"],
       inject: (entryPointName) =>
         entryPointName === "style" ? "head" : "body",
+      scriptLoading: "async",
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "catering.html"),
@@ -127,6 +129,7 @@ module.exports = {
       chunks: ["style"],
       inject: (entryPointName) =>
         entryPointName === "style" ? "head" : "body",
+      scriptLoading: "async",
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "home-order.html"),
@@ -134,6 +137,7 @@ module.exports = {
       chunks: ["style"],
       inject: (entryPointName) =>
         entryPointName === "style" ? "head" : "body",
+      scriptLoading: "async",
     }),
     // new HtmlWebpackIncludeAssetsPlugin({
     //   assets: ["path/to/chunked/html/file.html"],

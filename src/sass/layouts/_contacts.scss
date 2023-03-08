@@ -1,14 +1,9 @@
 .contacts {
-  // background-image: linear-gradient(#dc24244f, #4a569d62),
-  //   url(../images/hookah/Image-by-rawpixel.com-on-Freepik.jpg);
   // position: relative;
-  background-image: var(--gradient-reverse),
-    // url("../images/hookah/background.png");
-    url("./images/hookah/circle.jpg");
+  background-image: var(--gradient-reverse), url("./images/hookah/circle.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  // background-attachment: fixed;
 
   & .container {
     display: flex;
