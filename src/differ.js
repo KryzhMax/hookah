@@ -1,4 +1,4 @@
-import AOS from "aos";
-import "./js/app";
+// import AOS from "aos";
+// import "./js/app";
 
-AOS.init();
+// AOS.init();

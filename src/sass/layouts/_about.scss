@@ -1,35 +1,9 @@
 .about {
   @include mq(mob) {
-    background-image: var(--gradient), url(../images/hookah/tobacco-bowl.png);
-    // background-image: var(--gradient), url(../images/hookah/bowl.webp);
+    background-image: var(--gradient), url(../images/hookah/tobacco-bowl.webp);
     background-size: cover;
     background-repeat: no-repeat;
-
-    // background-image: url(../images/about/mob-milk-left.png),
-    // url(../images/about/mob-milk-right.png);
-    // background-size: 88px;
-    // background-position: left 0 bottom 73px, right 0 bottom 200px;
-    // bottom: 175px;
-    // @include mq(retina) {
-    //   background-image: url(../images/about/mob-milk-left@2x.png),
-    //     url(../images/about/mob-milk-right@2x.png);
-    //   background-size: 88px;
-    // }
   }
-  // @include mq(desk) {
-  //   background-image: url(../images/about/desk-milk-left.png),
-  //     url(../images/about/desk-milk-right.png);
-  //   background-repeat: no-repeat;
-  //   background-position: left 0 top 80px, right 0 top 200px;
-  //   background-size: 250px;
-  //   @include mq(retina) {
-  //     background-image: url(../images/about/desk-milk-left@2x.png),
-  //       url(../images/about/desk-milk-right@2x.png);
-  //     background-repeat: no-repeat;
-  //     background-position: left 0 top 236px, right 50 top 236px;
-  //     background-size: 250px;
-  //   }
-  // }
 }
 
 .about.container {
