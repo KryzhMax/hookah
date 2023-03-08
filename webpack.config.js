@@ -8,6 +8,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 // const HtmlWebpackIncludeAssetsPlugin = require("html-webpack-include-assets-plugin");
 
 module.exports = {
+  // entry: "./src/index.js",
   entry: {
     index: {
       import: path.join(__dirname, "src", "index.js"),
@@ -18,7 +19,7 @@ module.exports = {
     path: path.join(__dirname, "dist"),
     filename: "[name].[contenthash:8].js",
     assetModuleFilename: path.join("images", "[name].[contenthash][ext]"),
-    style: "style[contenthash].css",
+    clean: true,
   },
   optimization: {
     minimize: true,
@@ -112,9 +113,7 @@ module.exports = {
       filename: "index.html",
       chunks: ["index", "style"],
       inject: (entryPointName) =>
-        entryPointName === "index" || entryPointName === "style"
-          ? "head"
-          : "body",
+        entryPointName === "style" ? "head" : "body",
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "differ.html"),
