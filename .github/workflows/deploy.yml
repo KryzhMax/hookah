@@ -1,65 +1,24 @@
-name: Build and deploy to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Install dependencies 🔧
-        run: npm ci
-
-      - name: Build 🏗️
-        run: npm run build
-
-      - name: Configure Git 🛠️
+      - name: Build website
         run: |
-          git config --global user.email "maximkryzhanovsky@gmail.com"
-          git config --global user.name "Maksym Kryzhanovskyi"
+          npm install
+          npm run build
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: dist
-
-      - name: Commit changes 🔏
-        run: |
-          git add dist/
-          git commit -m "Deploy to GitHub Pages"
-
-      - name: Push changes 🚀
-        uses: ad-m/github-push-action@master
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
           publish_dir: ./src
-# name: Deploy to GitHub Pages
-
-# on:
-#   push:
-#     branches:
-#       - main
-
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v2
-
-#       - name: Build website
-#         run: |
-#           npm install
-#           npm run build
-
-#       - name: Deploy to GitHub Pages
-#         uses: peaceiris/actions-gh-pages@v3
-#         with:
-#           personal_token: ${{ secrets.GITHUB_TOKEN }}
-#           publish_dir: ./src
