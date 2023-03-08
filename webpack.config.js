@@ -17,7 +17,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, "dist"),
     filename: "[name].[contenthash:8].js",
-    assetModuleFilename: path.join("images", "[name].[contenthash][ext]"),
+    assetModuleFilename: path.join("[name].[contenthash:8][ext]"),
     clean: true,
   },
   optimization: {
@@ -110,9 +110,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "index.html"),
       filename: "index.html",
-      chunks: ["index", "style"],
+      chunks: ["style", "index"],
       inject: (entryPointName) =>
-        entryPointName === "style" ? "head" : "body",
+        entryPointName === "index" || entryPointName === "style"
+          ? "head"
+          : "body",
       scriptLoading: "async",
     }),
     new HtmlWebpackPlugin({
@@ -121,7 +123,6 @@ module.exports = {
       chunks: ["style"],
       inject: (entryPointName) =>
         entryPointName === "style" ? "head" : "body",
-      scriptLoading: "async",
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "catering.html"),
@@ -129,7 +130,6 @@ module.exports = {
       chunks: ["style"],
       inject: (entryPointName) =>
         entryPointName === "style" ? "head" : "body",
-      scriptLoading: "async",
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "src", "home-order.html"),
@@ -137,7 +137,6 @@ module.exports = {
       chunks: ["style"],
       inject: (entryPointName) =>
         entryPointName === "style" ? "head" : "body",
-      scriptLoading: "async",
     }),
     // new HtmlWebpackIncludeAssetsPlugin({
     //   assets: ["path/to/chunked/html/file.html"],
